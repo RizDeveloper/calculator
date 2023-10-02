@@ -26,7 +26,7 @@ const Calculator = (props) => {
           // right: "-350px",
           // left: "10px",
         }}
-        onClick={props.toggleMode}
+        // onClick={props.toggleMode}
       >
         {props.isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
       </IconButton>
@@ -128,6 +128,7 @@ const Calculator = (props) => {
   };
 
   const handleClearClick = () => {
+    props.setResult("");
     props.setDisplayValue(props.displayValue.slice(0, -1));
   };
 
@@ -199,7 +200,7 @@ const Calculator = (props) => {
           >
             Clear
           </Button>
-          <Button
+          <IconButton
             style={{
               ...styles.button,
               ...(props.isDarkMode && {
@@ -208,10 +209,11 @@ const Calculator = (props) => {
                 border: styles.dMBorder,
               }),
             }}
+            onClick={props.toggleMode}
             // onClick={() => props.handleButtonClick("/")}
           >
             <ToggleButton />
-          </Button>
+          </IconButton>
           <Button
             style={{
               ...styles.button,
