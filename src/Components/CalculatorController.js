@@ -26,7 +26,8 @@ const CalculatorController = (props) => {
   const handleOperatorChange = (event) => {
     setOperator(event.target.value);
   };
-  const API_URL = "http://localhost:5000/api/calculate";
+  const API_URL = "https://rizcalculatorbackend.onrender.com";
+  // const API_URL = "http://localhost:5000/api/calculate";
 
   const calculateResult = async () => {
     try {
